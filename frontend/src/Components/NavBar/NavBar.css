@@ -43,6 +43,11 @@
     cursor: pointer;
 }
 
+.links{
+    text-decoration: none;
+    color: white;
+}
+
 .nav-menu hr{
     border: none;
     width: 80%;

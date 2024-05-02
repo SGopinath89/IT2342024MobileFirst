@@ -3,6 +3,7 @@ import './NavBar.css'
 
 import logo from '../Assets/icons/Mobile1st.png';
 import cart_icon from '../Assets/icons/cart_icon.png';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -15,13 +16,13 @@ const NavBar = () => {
             <p>M O B I L E 1 <sup>st</sup></p>
         </div>
         <ul className="nav-menu">
-            <li onClick={()=>{setMenu("home")}}>Home{menu==="home"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("products")}}>Products{menu==="products"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("home")}}><Link className='links' to='/'>Home</Link>{menu==="home"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("products")}}><Link className='links' to='products'>Products</Link>{menu==="products"?<hr/>:<></>}</li>
             <li onClick={()=>{setMenu("contact")}}>Contact{menu==="contact"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login-cart">
-            <button>Login</button>
-            <img src={cart_icon} alt="" />
+            <Link className='links' to='/login'><button>Login</button></Link>
+            <Link className='links' to='/cart'><img src={cart_icon} alt="" /></Link>
             <div className="nav-cart-count">0</div>
         </div>
     </div>
