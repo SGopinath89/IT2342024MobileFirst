@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="shade"></div>
         </div>
 
-        <div class="texts">
+        <div className="texts">
             <h2>M O B I L E 1<sup>st</sup></h2>
             <p>The Leading smartphone sellers in America.<br/>We are providing customer satisfied service all over the country.
             <br/><br/>

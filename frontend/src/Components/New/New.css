@@ -1,4 +1,4 @@
-.popular{
+.new{
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -7,14 +7,14 @@
     height: 90vh;
 }
 
-.popular h1{
+.new h1{
     color: #3e362e;
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 0;
 }
 
-.popular hr{
+.new hr{
     margin-top: 0;
     width: 200px;
     height: 2px;
@@ -22,7 +22,7 @@
     background: #865d36;
 }
 
-.popular-item{
+.new-item{
     margin-top: 50px;
     padding-left: 5rem;
     display: flex;
