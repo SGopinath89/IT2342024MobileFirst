@@ -2,10 +2,23 @@ import React, { useContext } from 'react'
 import './CartItems.css'
 import { ProductContext } from '../../Context/ProductContext'
 import remove_icon from '../Assets/icons/cart_cross_icon.png'
+import Swal from 'sweetalert2'
 
 const CartItems = () => {
 
     const {all_products, cartItems, removeFromCart, getTotalCartAmount} = useContext(ProductContext);
+
+    const handleClick = ()=>{
+        Swal.fire({
+            title: "Order is Placed!",
+            text: "You will contact through the email you provided.",
+            icon: "success"
+          }).then((result)=>{
+            if(result.isConfirmed){
+                window.location.replace("/");
+            }
+          });
+    }
 
   return (
     <div className='cartitems'>
@@ -53,7 +66,7 @@ const CartItems = () => {
                         <h3>Total</h3>
                         <h3>${getTotalCartAmount()}</h3>
                     </div>
-                    <button>PROCEED TO CHECKOUT</button>
+                    <button onClick={handleClick}>PROCEED TO CHECKOUT</button>
                 </div>
             </div>
         </div>
