@@ -6,18 +6,34 @@ import Swal from 'sweetalert2'
 
 const CartItems = () => {
 
-    const {all_products, cartItems, removeFromCart, getTotalCartAmount} = useContext(ProductContext);
+    const {all_products, cartItems, removeFromCart, getTotalCartAmount, getTotalCartItems} = useContext(ProductContext);
 
     const handleClick = ()=>{
-        Swal.fire({
-            title: "Order is Placed!",
-            text: "You will contact through the email you provided.",
-            icon: "success"
-          }).then((result)=>{
-            if(result.isConfirmed){
-                window.location.replace("/");
-            }
-          });
+
+        const totalItems = getTotalCartItems();
+
+        if (totalItems > 0) {
+            Swal.fire({
+                title: "Order sent!",
+                text: "You will contact through the email you provided.",
+                icon: "success"
+              }).then((result)=>{
+                if(result.isConfirmed){
+                    window.location.replace("/");
+                }
+              });
+        }
+        else{
+            Swal.fire({
+                title: "Cart is empty!",
+                text: "Please add atleast one product to place an order.",
+                icon: "warning"
+              }).then((result)=>{
+                if(result.isConfirmed){
+                    window.location.replace("/");
+                }
+              });
+        }
     }
 
   return (
